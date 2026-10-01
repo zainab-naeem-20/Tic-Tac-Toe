@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --bg-cream: #FAF0E6;          
+    --cherry-red: #8B1E3F;         
+    --leaf-green: #3D5A45;         
+    --bow-pink: #D87093;          
+    
+    --text-color: #8B1E3F;         
+    --text-hover: #5D1329;        
+    
+    --border-color: #3D5A45;       
+    --border-hover: #8B1E3F;       
+    
+    --card-bg: rgba(250, 240, 230, 0.85); 
+    --button-bg: #8B1E3F;         
+    --button-text: #FFFFFF;       
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    user-select: none;
+    color: black;
+}
+
+main{
+    background: url(fond\ d\'écran.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px);
+    transform: scale(1.1); 
+    z-index: -1;
+}
