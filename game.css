@@ -50,19 +50,20 @@ main::before {
 
 #header{
     display: flex;
-    width: 350px;
+    width: 400px;
     justify-content: space-between;
     margin-bottom: 30px;
     background: var(--cherry-red);
     padding: 15px;
     border: solid 2px var(--bow-pink);
+    box-shadow: 0 10px 25px #D87093;
     border-radius: 75px;
 }
 
 #header h3{
     color: var(--bg-cream);
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 700;
     padding: 0 20px;
 }
 
@@ -75,7 +76,79 @@ main::before {
      align-items: center;
      justify-content: center;
      font-size: 30px;
-     font-weight: bold;
+     font-weight: 700;
      cursor: pointer;
-     border-radius: 75px;
+     border-radius: 85px;
+     border: 3px solid var(--bow-pink);
+     opacity: 0.9;
+     transition: 0.3s;
+}
+
+#header .player:hover{
+    background-color: var(--button-bg);
+    color: var(--bg-cream);
+    border: 4px solid var(--border-color);
+}
+
+#header .player-active{
+    opacity: 1;
+    border: 4px solid var(--button-text);
+}
+
+#board{
+    width: 400px;
+    height: 400px;
+    background: var(--cherry-red);
+    display: grid;
+    grid-template-columns: repeat(3,70px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 15px;
+    border-radius: 75px;
+    border: 3px solid var(--bow-pink);
+    box-shadow: 0 10px 25px #D87093;
+    place-content: center;
+}
+
+#board .cell{
+    width: 70px;
+    height: 70px;
+    background: var(--bg-cream);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 15px var(--bow-pink);
+    transition: 0.3s background;
+}
+
+#board .cell:hover{
+    background: var(--bow-pink);
+    color: var(--bg-cream);
+    border: 3px solid var(--card-bg);
+}
+
+#restartBtn{
+    margin-top: 30px;
+    width: 390px;
+    height: 60px;
+    background: var(--cherry-red);
+    color: var(--bg-cream);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 3px solid var(--bow-pink);
+    border-radius: 75px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s background;
+}
+
+#restartBtn:hover{
+    box-shadow: 0 10px 15px var(--bow-pink);
+    color: var(--text-hover);
+    background: var(--bg-cream);
+    border: 3px solid var(--cherry-red);
 }
