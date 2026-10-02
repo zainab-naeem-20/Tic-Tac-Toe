@@ -2,7 +2,10 @@
 
 # 🎮 Tic-Tac-Toe Game
 
-  <img src="https://media.giphy.com/media/26ebwZyt6vWAtc7u/giphy.gif" width="100px" alt="Game Banner Icon" />
+ <h2 style="color:#ff69b4;">
+  ✨ Developed with 💜 by <b>Zainab Naeem</b> 🎀
+</h2>
+
 
   <p>A stylish, responsive, and interactive <b>Tic-Tac-Toe</b> web application built with modern HTML5, custom CSS styling, and pure JavaScript logic.</p>
 
