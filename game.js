@@ -51,7 +51,7 @@ function changePlayer() {
 }
 
 function randomPick() {
-    
+    if (inputCells.every(cell => cell !== '')) return;
     isPauseGame = true
 
     setTimeout(() => {
@@ -98,7 +98,9 @@ function checkWinner() {
 function declareWinner(winningIndices) {
     titleHeader.textContent = `${player} Win`
     isPauseGame = true
-
+    if (typeof confetti === 'function') {
+        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+    }
     // Highlight winning cells
     winningIndices.forEach((index) =>
         cells[index].style.background = '#8d140d'
