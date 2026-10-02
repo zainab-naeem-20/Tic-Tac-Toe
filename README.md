@@ -7,7 +7,7 @@
 </h2>
 
 
-  <p>A stylish, responsive, and interactive <b>Tic-Tac-Toe</b> web application built with modern HTML5, custom CSS styling, and pure JavaScript logic.</p>
+  <p>A stylish and interactive <b>Tic-Tac-Toe</b> web application built with modern HTML5, custom CSS styling, and pure JavaScript logic.</p>
 
   <p>
     <a href="#-key-features"><b>Key Features</b></a> •
