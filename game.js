@@ -1,7 +1,8 @@
 let cells = document.querySelectorAll('.cell');
-let titleHearder = document.querySelector("titleHeader");
-let xplayerDisplay = document.querySelector('xplayerDisplay');
-let oplayerDisplay = document.querySelector('oplayerDisplay');
+let titleHeader = document.querySelector('#titleHeader');
+let xplayerDisplay = document.querySelector('#xplayerDisplay');
+let oplayerDisplay = document.querySelector('#oplayerDisplay');
+let restartBtn = document.querySelector('#restartBtn');
 
 // Variables
 
@@ -17,9 +18,9 @@ const inputCells =  ['','','',
 // Array Of Win Conditions 
 
 const winConditions = [
-    [0,1,2] , [3,4,5] , [6,7,8],  // Rows
-    [0,3,6] , [1,4,7] , [2,5,8], // columns
-    [0,4,6] , [2,4,6]  // Daigonals
+    [0, 1, 2] , [3, 4, 5] , [6, 7, 8],  // Rows
+    [0, 3, 6] , [1, 4, 7] , [2, 5, 8], // columns
+    [0, 4, 8] , [2, 4, 6] // Diagonals
 ];
 
 // Add eventlistner to each cell
@@ -32,8 +33,9 @@ function topCell(cell, index){
    if(cell.textContent == '' && !isPauseGame) {
     isGameStart = true;
     updateCell (cell , index);
-    if(!checkWinnwe()) {
+    if(!checkWinner()) {
         changePlayer();
+        randomPick();
     }
    }
 };
@@ -46,6 +48,33 @@ function updateCell(cell,index) {
 
 function changePlayer() {
     player = (player == 'X') ? 'O' : 'X';
+}
+
+function randomPick() {
+    
+    isPauseGame = true
+
+    setTimeout(() => {
+        let randomIndex
+        do {
+            // Pick a random index
+            randomIndex = Math.floor(Math.random() * inputCells.length)
+        } while (
+           
+            inputCells[randomIndex] != ''
+        )
+
+        // Update the cell with Computer move
+        updateCell(cells[randomIndex], randomIndex, player)
+       
+        if (!checkWinner()) {
+            changePlayer()
+            
+            isPauseGame = false
+            return
+        }
+        player = (player == 'X') ? 'O' : 'X'
+    }, 1000)
 }
 
 function checkWinner() {
@@ -91,12 +120,12 @@ function choosePlayer(selectedPlayer) {
         player = selectedPlayer
         if (player == 'X') {
           
-            xPlayerDisplay.classList.add('player-active')
-            oPlayerDisplay.classList.remove('player-active')
+            xplayerDisplay.classList.add('player-active')
+            oplayerDisplay.classList.remove('player-active')
         } else {
            
-            xPlayerDisplay.classList.remove('player-active')
-            oPlayerDisplay.classList.add('player-active')
+            xplayerDisplay.classList.remove('player-active')
+            oplayerDisplay.classList.add('player-active')
         }
     }
 }
