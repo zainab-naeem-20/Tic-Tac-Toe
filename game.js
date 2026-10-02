@@ -65,3 +65,15 @@ function checkWinner() {
         return true
     }
 }
+
+function declareWinner(winningIndices) {
+    titleHeader.textContent = `${player} Win`
+    isPauseGame = true
+
+    // Highlight winning cells
+    winningIndices.forEach((index) =>
+        cells[index].style.background = '#8d140d'
+    )
+
+    restartBtn.style.visibility = 'visible'
+}
