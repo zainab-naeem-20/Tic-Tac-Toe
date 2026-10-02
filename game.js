@@ -100,3 +100,15 @@ function choosePlayer(selectedPlayer) {
         }
     }
 }
+
+restartBtn.addEventListener('click', () => {
+    restartBtn.style.visibility = 'hidden'
+    inputCells.fill('')
+    cells.forEach(cell => {
+        cell.textContent = ''
+        cell.style.background = ''
+    })
+    isPauseGame = false
+    isGameStart = false
+    titleHeader.textContent = 'Choose'
+});
