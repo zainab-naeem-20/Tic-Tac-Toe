@@ -77,3 +77,26 @@ function declareWinner(winningIndices) {
 
     restartBtn.style.visibility = 'visible'
 }
+
+function declareDraw() {
+    titleHeader.textContent = 'Draw!'
+    isPauseGame = true
+    restartBtn.style.visibility = 'visible'
+}
+
+function choosePlayer(selectedPlayer) {
+   
+    if (!isGameStart) {
+        
+        player = selectedPlayer
+        if (player == 'X') {
+          
+            xPlayerDisplay.classList.add('player-active')
+            oPlayerDisplay.classList.remove('player-active')
+        } else {
+           
+            xPlayerDisplay.classList.remove('player-active')
+            oPlayerDisplay.classList.add('player-active')
+        }
+    }
+}
